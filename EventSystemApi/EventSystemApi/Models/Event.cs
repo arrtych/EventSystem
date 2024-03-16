@@ -16,6 +16,8 @@ namespace EventSystemApi.Models
         public string? Place { get; set; }
 
 
+        public List<Person> Participants { get; set; }
+
 
 
     }
