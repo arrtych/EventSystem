@@ -10,7 +10,7 @@ namespace EventSystemApi.Models
         public string LastName { get; set; }
 
 
-        public PersonType PersonType = PersonType.Private;
+        //public string PersonType = Types.PersonType.Private.ToString();
 
         [StringLength(1500)]
         public new string? Info { get; set; }

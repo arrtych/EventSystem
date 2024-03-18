@@ -3,6 +3,7 @@ using System;
 using EventSystemApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,42 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventSystemApi.Migrations
 {
     [DbContext(typeof(EventSystemDbContex))]
-    partial class EventSystemDbContexModelSnapshot : ModelSnapshot
+    [Migration("20240318222125_db_v2")]
+    partial class db_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
-
-            modelBuilder.Entity("CompanyEvent", b =>
-                {
-                    b.Property<int>("CompaniesId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("EventsId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("CompaniesId", "EventsId");
-
-                    b.HasIndex("EventsId");
-
-                    b.ToTable("EventCompany", (string)null);
-                });
-
-            modelBuilder.Entity("EventPrivatePerson", b =>
-                {
-                    b.Property<int>("EventsId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("PersonsId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("EventsId", "PersonsId");
-
-                    b.HasIndex("PersonsId");
-
-                    b.ToTable("EventPerson", (string)null);
-                });
 
             modelBuilder.Entity("EventSystemApi.Models.Company", b =>
                 {
@@ -127,36 +100,6 @@ namespace EventSystemApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PrivatePersons");
-                });
-
-            modelBuilder.Entity("CompanyEvent", b =>
-                {
-                    b.HasOne("EventSystemApi.Models.Company", null)
-                        .WithMany()
-                        .HasForeignKey("CompaniesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EventSystemApi.Models.Event", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EventPrivatePerson", b =>
-                {
-                    b.HasOne("EventSystemApi.Models.Event", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EventSystemApi.Models.PrivatePerson", null)
-                        .WithMany()
-                        .HasForeignKey("PersonsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

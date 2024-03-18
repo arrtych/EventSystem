@@ -1,4 +1,7 @@
 using EventSystemApi.Data;
+using EventSystemApi.Models;
+using EventSystemApi.Repository;
+using EventSystemApi.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<EventSystemDbContex>(options =>
    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IRepository<Event>, EventRepository>();
+builder.Services.AddScoped<EventService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

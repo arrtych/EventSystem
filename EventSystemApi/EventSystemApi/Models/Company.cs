@@ -11,7 +11,7 @@ namespace EventSystemApi.Models
 
         public int ParticipantsAmount { get; set; } = 0;
 
-        public PersonType PersonType = PersonType.Juridical;
+       // public string PersonType = Types.PersonType.Juridical.ToString();
 
         [StringLength(5000)]
         public new string? Info { get; set; }
