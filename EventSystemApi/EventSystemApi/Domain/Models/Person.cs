@@ -1,4 +1,5 @@
-﻿using EventSystemApi.Types;
+﻿using EventSystemApi.Domain.Models;
+using EventSystemApi.Types;
 
 namespace EventSystemApi.Models
 {

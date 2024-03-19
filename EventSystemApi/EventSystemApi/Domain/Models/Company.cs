@@ -1,9 +1,10 @@
-﻿using EventSystemApi.Types;
+﻿using EventSystemApi.Models;
+using EventSystemApi.Types;
 using System.ComponentModel.DataAnnotations;
 
-namespace EventSystemApi.Models
+namespace EventSystemApi.Domain.Models
 {
-    public class Company: Person
+    public class Company : Person
     {
 
         public string JuridicalName { get; set; }
@@ -11,7 +12,7 @@ namespace EventSystemApi.Models
 
         public int ParticipantsAmount { get; set; } = 0;
 
-       // public string PersonType = Types.PersonType.Juridical.ToString();
+        // public string PersonType = Types.PersonType.Juridical.ToString();
 
         [StringLength(5000)]
         public new string? Info { get; set; }

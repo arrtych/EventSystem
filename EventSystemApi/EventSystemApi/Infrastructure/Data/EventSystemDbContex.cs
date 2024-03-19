@@ -1,10 +1,11 @@
-﻿using EventSystemApi.Models;
+﻿using EventSystemApi.Domain.Models;
+using EventSystemApi.Models;
 using EventSystemApi.Types;
 using Microsoft.EntityFrameworkCore;
 
-namespace EventSystemApi.Data
+namespace EventSystemApi.Infrastructure.Data
 {
-    public class EventSystemDbContex: DbContext
+    public class EventSystemDbContex : DbContext
     {
 
         public EventSystemDbContex(DbContextOptions<EventSystemDbContex> options) : base(options)

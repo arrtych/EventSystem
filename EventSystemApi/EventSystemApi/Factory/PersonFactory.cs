@@ -1,4 +1,5 @@
-﻿using EventSystemApi.Models;
+﻿using EventSystemApi.Domain.Models;
+using EventSystemApi.Models;
 
 namespace EventSystemApi.Factory
 {

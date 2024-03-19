@@ -1,4 +1,4 @@
-﻿namespace EventSystemApi.Repository
+﻿namespace EventSystemApi.Domain.Interfaces
 {
     public interface IRepository<T> where T : class
     {

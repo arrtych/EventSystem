@@ -1,9 +1,10 @@
-﻿using EventSystemApi.Data;
-using EventSystemApi.Models;
+﻿using EventSystemApi.Domain.Interfaces;
+using EventSystemApi.Domain.Models;
+using EventSystemApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace EventSystemApi.Repository
+namespace EventSystemApi.Infrastructure.Repository
 {
     public class EventRepository : IRepository<Event>
     {

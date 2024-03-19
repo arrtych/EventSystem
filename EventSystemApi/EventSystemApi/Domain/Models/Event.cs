@@ -1,6 +1,7 @@
-﻿using EventSystemApi.Types;
+﻿using EventSystemApi.Models;
+using EventSystemApi.Types;
 
-namespace EventSystemApi.Models
+namespace EventSystemApi.Domain.Models
 {
     public class Event
     {

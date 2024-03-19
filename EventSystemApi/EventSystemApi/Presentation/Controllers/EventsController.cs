@@ -1,9 +1,9 @@
-﻿using EventSystemApi.Models;
-using EventSystemApi.Service;
+﻿using EventSystemApi.Application.Service;
+using EventSystemApi.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventSystemApi.Controllers
+namespace EventSystemApi.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

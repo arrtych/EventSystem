@@ -1,7 +1,8 @@
-using EventSystemApi.Data;
-using EventSystemApi.Models;
-using EventSystemApi.Repository;
-using EventSystemApi.Service;
+using EventSystemApi.Application.Service;
+using EventSystemApi.Domain.Interfaces;
+using EventSystemApi.Domain.Models;
+using EventSystemApi.Infrastructure.Data;
+using EventSystemApi.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
