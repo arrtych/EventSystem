@@ -25,6 +25,7 @@ namespace EventSystemApi.Domain.Models
 
         //TODO: change list to optional,
         //add test for controllers methods
+        //check migrations folder namespace and move to data folder
         public Event()
         {
             Companies = new List<Company>();
