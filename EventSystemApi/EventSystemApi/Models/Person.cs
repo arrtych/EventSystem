@@ -13,8 +13,6 @@ namespace EventSystemApi.Models
 
         public string? Info { get; set; }
 
-        //public int EventId { get; set; } // Foreign key for Event
-        //public Event Event { get; set; } // Navigation property
 
         public ICollection<Event> Events { get; set; } // Navigation property
 
