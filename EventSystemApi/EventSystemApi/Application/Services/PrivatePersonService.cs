@@ -1,6 +1,6 @@
 ﻿using EventSystemApi.Domain.Interfaces;
 using EventSystemApi.Domain.Models;
-using EventSystemApi.Infrastructure.Repository;
+using EventSystemApi.Infrastructure.Repositories;
 using EventSystemApi.Models;
 
 namespace EventSystemApi.Application.Services

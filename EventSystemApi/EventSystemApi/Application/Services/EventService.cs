@@ -1,7 +1,7 @@
 ﻿using EventSystemApi.Domain.Interfaces;
 using EventSystemApi.Domain.Models;
 
-namespace EventSystemApi.Application.Service
+namespace EventSystemApi.Application.Services
 {
     public class EventService
     {

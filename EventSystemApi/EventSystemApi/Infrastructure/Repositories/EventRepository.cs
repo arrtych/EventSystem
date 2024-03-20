@@ -4,7 +4,7 @@ using EventSystemApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace EventSystemApi.Infrastructure.Repository
+namespace EventSystemApi.Infrastructure.Repositories
 {
     public class EventRepository : IRepository<Event>
     {

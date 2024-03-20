@@ -3,7 +3,7 @@ using EventSystemApi.Domain.Models;
 using EventSystemApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace EventSystemApi.Infrastructure.Repository
+namespace EventSystemApi.Infrastructure.Repositories
 {
     public class CompanyRepository : IRepository<Company>
     {

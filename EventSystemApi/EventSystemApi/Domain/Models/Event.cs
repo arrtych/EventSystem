@@ -20,8 +20,8 @@ namespace EventSystemApi.Domain.Models
 
         //public ICollection<Person> Participants { get; set; } = new List<Person>(); // Navigation property
 
-        public ICollection<Company> Companies { get; set; } // Navigation property
-        public ICollection<PrivatePerson> Persons { get; set; } // Navigation property
+        public ICollection<Company>? Companies { get; set; } // Navigation property
+        public ICollection<PrivatePerson>? Persons { get; set; } // Navigation property
 
         //TODO: change list to optional,
         //add test for controllers methods

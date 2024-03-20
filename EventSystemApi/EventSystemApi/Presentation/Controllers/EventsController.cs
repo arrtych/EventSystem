@@ -1,4 +1,4 @@
-﻿using EventSystemApi.Application.Service;
+﻿using EventSystemApi.Application.Services;
 using EventSystemApi.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
