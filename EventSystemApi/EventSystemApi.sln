@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSystemApi", "EventSystemApi\EventSystemApi.csproj", "{CC12845E-DC1C-402A-A7C7-FFCBBA0637C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSystemApi", "EventSystemApi\EventSystemApi.csproj", "{CC12845E-DC1C-402A-A7C7-FFCBBA0637C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSystemApiTest", "EventSystemApiTest\EventSystemApiTest.csproj", "{2326228F-312B-4B03-993F-6B19A24F874F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CC12845E-DC1C-402A-A7C7-FFCBBA0637C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC12845E-DC1C-402A-A7C7-FFCBBA0637C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC12845E-DC1C-402A-A7C7-FFCBBA0637C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2326228F-312B-4B03-993F-6B19A24F874F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2326228F-312B-4B03-993F-6B19A24F874F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2326228F-312B-4B03-993F-6B19A24F874F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2326228F-312B-4B03-993F-6B19A24F874F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
