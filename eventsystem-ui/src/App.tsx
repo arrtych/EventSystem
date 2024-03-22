@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import EventList from './components/EventList';
 import CustomTabs from './components/CustomTabs';
+import { EventSystemContextProvider } from "./context/EventSystemContext";
 
 function App() {
   const tabLabels = ['Avaleht', 'Ürituse lisamine'];
@@ -10,11 +11,15 @@ function App() {
     <EventList/>
   ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <CustomTabs labels={tabLabels} content={tabContent} />
-      </header>
-    </div>
+    <EventSystemContextProvider>
+
+      <div className="App">
+        <header className="App-header">
+          <CustomTabs labels={tabLabels} content={tabContent} />
+        </header>
+      </div>
+    </EventSystemContextProvider>
+
   );
 }
 
