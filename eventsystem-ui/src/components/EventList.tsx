@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import { Endpoints } from '../endpoints';
 import { EventSystemContext } from "../context/EventSystemContext";
+import TextPreview from './TextPreview';
 
 
 interface EventProps {
@@ -16,7 +17,9 @@ interface EventProps {
 const EventList: React.FC = () => {
     // const [events, setEvents] = useState<EventProps[]>([]);
     const context = useContext(EventSystemContext);
+    const loading  = context.loading
     const events: EventProps[] = context?.events || [];
+    
     // useEffect(() => {
 
     //     const fetchData = async () => {
@@ -33,11 +36,15 @@ const EventList: React.FC = () => {
 
       // console.log("context", context?.name)
       console.log("context events", context?.events)
+      console.log("context loading", context.loading)
 
     return (
         <>
+      { loading ? (
+        <div><TextPreview/></div>
+      ) : (
+          <div>
             <div>Events</div>
-            <div></div>
             <div>
                 {events.map((e) => (
                     <div>
@@ -46,10 +53,14 @@ const EventList: React.FC = () => {
                     </div>
                     ))
                 }
-
-
-
             </div>
+
+          </div>
+      )}   
+
+
+
+
         </>
 
     )

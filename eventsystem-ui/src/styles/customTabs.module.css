@@ -2,3 +2,21 @@
     text-transform: uppercase;
     font-weight: bold;
 } */
+
+.mainBox {
+  padding-left: 35px;
+  padding-right: 35px;
+  /* width: 100%; */
+}
+
+.GridItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.GridItemEnd {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

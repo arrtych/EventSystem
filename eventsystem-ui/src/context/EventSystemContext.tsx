@@ -11,10 +11,14 @@ import { Endpoints } from '../endpoints';
   export const EventSystemContext = createContext ({
     // name: "",
     events: [],
+    loading: false,
+    page: 0
   })
   
   export const EventSystemContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [events, setEvents] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [page, setPage] = useState(0)
     // const [name, setName] = useState([])
 
     // Define your context state and functions here
@@ -23,7 +27,7 @@ import { Endpoints } from '../endpoints';
     //   events: []
     // };
 
-    const fetchData = async () => {
+    const fetchEvents = async () => {
         try {
           const response = await axios.get(Endpoints.MAIN_URL + Endpoints.events_all);
           setEvents(response.data);
@@ -32,17 +36,18 @@ import { Endpoints } from '../endpoints';
         //   value.events = response.data;
         } catch (error) {
           console.error('Error fetching data:', error);
+          setLoading(true);
         }
       };
 
     useEffect(() => {
 
 
-    
-        fetchData();
+        console.log("page", page)
+        fetchEvents();
       }, []);
   
-    return <EventSystemContext.Provider value={{ events }}>{children}</EventSystemContext.Provider>;
+    return <EventSystemContext.Provider value={{ loading, events, page }}>{children}</EventSystemContext.Provider>;
   };
   
   export const useMyContext = () => {
