@@ -4,6 +4,7 @@ import styles from "../styles/customTabs.module.css";
 import { EventSystemContext } from "../context/EventSystemContext";
 import { ReactComponent as Logo } from "../icons/logo.svg";
 import { ReactComponent as Symbol } from "../icons/symbol.svg";
+import Section from "./Section";
 
 interface TabsComponentProps {
   labels: string[];
@@ -15,7 +16,6 @@ const CustomTabs: React.FC<TabsComponentProps> = ({ labels, content }) => {
   const context = useContext(EventSystemContext);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
-    // if()
 
     context.page = newValue;
     console.log("context.page", context.page);
@@ -25,6 +25,7 @@ const CustomTabs: React.FC<TabsComponentProps> = ({ labels, content }) => {
     context.page = value;
     console.log("tab value", value);
   }, []);
+
   return (
     <>
       <Box
@@ -40,7 +41,6 @@ const CustomTabs: React.FC<TabsComponentProps> = ({ labels, content }) => {
             <Tabs
               value={value}
               onChange={handleChange}
-              // centered
               sx={{
                 "& .MuiTabs-indicator": {
                   display: "none",
@@ -72,19 +72,26 @@ const CustomTabs: React.FC<TabsComponentProps> = ({ labels, content }) => {
             <Symbol />
           </Grid>
         </Grid>
-        <Grid container style={{ border: "1px solid black" }}>
-          {content.map((tabContent, index) => (
-            <div key={index} hidden={value !== index}>
-              {value === index && (
-                <div>
-                  <div className={styles.title}>{tabContent}</div>
-                  <div>Context {context.page}</div>
-                </div>
-              )}
-            </div>
-          ))}
-        </Grid>
       </Box>
+
+      <Section />
+
+      <Grid
+        container
+        className={styles.mainBox}
+        // style={{ border: "1px solid black" }}
+      >
+        {content.map((tabContent, index) => (
+          <div key={index} hidden={value !== index}>
+            {value === index && (
+              <div>
+                <div className={styles.title}>{tabContent}</div>
+                <div>Context {context.page}</div>
+              </div>
+            )}
+          </div>
+        ))}
+      </Grid>
     </>
   );
 };
